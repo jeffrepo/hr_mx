@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+
+        <!-- <report
+            id="action_planilla"
+            string="Planilla"
+            model="hr.payslip.run"
+            report_type="qweb-pdf"
+            file="hr_mx.planilla"
+            name="hr_mx.planilla"
+            menu="False"
+        /> -->
+
+
+        <record id="view_hr_mx_planilla_wizard" model="ir.ui.view">
+              <field name="name">Planilla</field>
+              <field name="model">hr_mx.planilla.wizard</field>
+              <field name="arch" type="xml">
+                <form string="Planilla">
+                    <group string="Campos">
+                        <field name="fecha_inicio"/>
+                        <field name="fecha_fin"/>
+                        <field name="nomina_ids" widget="many2many_tags"/>
+                        <field name="formato_planilla_id"/>
+                    </group>
+                    <group>
+                        <!-- <field name="columna_igss"/>
+                        <field name="agrupar_departamento"/> -->
+                        <field name="name" invisible="1"/>
+                        <field name="archivo" readonly="1" filename="name"/>
+                    </group>
+                    <footer>
+                        <!-- <button name="print_report" string="Print"  type="object" class="btn-primary"/> -->
+                        <button name="generar_excel" string="Reporte excel" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-default" special="cancel" />
+                    </footer>
+                </form>
+              </field>
+        </record>
+
+        <act_window id="hr_mx_action_planilla"
+            name="Reporte planilla"
+            res_model="hr_mx.planilla.wizard"
+            binding_model="hr.payslip"
+            view_mode="form" target="new"/>
+
+        <menuitem action="hr_mx_action_planilla" id="menu_planilla" parent="hr_payroll.menu_hr_payroll_report"/>
+
+
+    </data>
+</odoo>
