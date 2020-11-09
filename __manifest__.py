@@ -18,7 +18,7 @@
 
     'data': [
         'views/report_wizard.xml',
-        'views/hr_work_entry.py',
+        'views/hr_work_entry_views.xml',
         'views/hr_views.xml',
     ],
 }
