@@ -27,7 +27,7 @@ class HrPayslip(models.Model):
         dias = 0
         for linea in res:
             tipo_id = self.env['hr.work.entry.type'].search([('id','=',linea['work_entry_type_id'])])
-            if tipo_id and tipo_id.is_leave and tipo_id.descontar_nomina == False:
+            if tipo_id and tipo_id.is_leave and tipo_id.valida == False:
                 horas += linea['number_of_hours']
                 dias += linea['number_of_days']
 
@@ -39,7 +39,7 @@ class HrPayslip(models.Model):
             contracts = self.employee_id.contract_id
 
         for ausencia in tipos_ausencias_ids:
-            if ausencia.work_entry_type_id and ausencia.work_entry_type_id.descontar_nomina:
+            if ausencia.work_entry_type_id and ausencia.work_entry_type_id.valida:
                 ausencias_restar.append(ausencia.work_entry_type_id.id)
 
         for r in res:
