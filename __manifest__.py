@@ -17,8 +17,11 @@
     'depends': ['hr','hr_payroll','base'],
 
     'data': [
+        'data/ir_sequence_data.xml',
         'views/report_wizard.xml',
         'views/hr_work_entry_views.xml',
         'views/hr_views.xml',
+        'views/hr_mx_views.xml',
+        'views/hr_contract_views.xml',
     ],
 }

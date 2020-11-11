@@ -2,6 +2,36 @@
 <odoo>
     <data>
 
+                <record id="hr_mx_view_employee_form" model="ir.ui.view">
+                    <field name="name">hr_mx.hr.employee.form</field>
+                    <field name="model">hr.employee</field>
+                    <field name="inherit_id" ref="hr.view_employee_form"/>
+                    <field name="arch" type="xml">
+                        <page name="hr_settings" position="after">
+                            <page name="extras" string="Extras">
+                                <group>
+                                    <group>
+                                        <field name="historial_puesto_ids">
+                                            <tree string="Historial" editable="bottom">
+                                                <field name="puesto_id"/>
+                                                <field name="fecha_inicio"/>
+                                                <field name="fecha_fin"/>
+                                            </tree>
+                                        </field>
+                                        <field name="historial_rotacion_tienda_ids">
+                                            <tree string="Historial tiendas" editable="bottom">
+                                                <field name="tienda_id"/>
+                                                <field name="fecha_inicio"/>
+                                                <field name="fecha_fin"/>
+                                            </tree>
+                                        </field>
+                                    </group>
+                                </group>
+                            </page>
+                        </page>
+                    </field>
+                </record>
+
 
         <record id="view_hr_mx_planilla_form" model="ir.ui.view">
             <field name="name">hr_mx.planilla.form</field>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="hr_mx_hr_contract_view_form" model="ir.ui.view">
+            <field name="name">hr_mx.hr.contract.form</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+                <page name="information" position="after">
+                    <page name="extras" string="Extras">
+                        <group>
+                            <group>
+                                <field name="historial_salario_ids">
+                                    <tree string="Historial" editable="bottom">
+                                        <field name="salario"/>
+                                        <field name="salario_diario"/>
+                                        <field name="fecha_inicio"/>
+                                        <field name="fecha_fin"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+
+
+</odoo>
