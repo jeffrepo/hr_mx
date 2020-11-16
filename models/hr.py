@@ -6,8 +6,8 @@ class Employee(models.Model):
     _inherit = "hr.employee"
 
     area_id = fields.Many2one('hr.area',string='Area')
-    historial_puesto_ids = fields.One2many('hr_mx.historial_puesto_trabajo','empleado_id',string='Historial de puestos')
-    historial_rotacion_tienda_ids = fields.One2many('hr_mx.historial_rotacion_tienda','empleado_id',string='Historial de rotacion tiendas')
+    # historial_puesto_ids = fields.One2many('hr_mx.historial_puesto_trabajo','empleado_id',string='Historial de puestos')
+    historial_rotacion_tienda_ids = fields.One2many('hr_mx.historial_rotacion_tienda','empleado_id',string='Carrera Quemeniana',tracking=True)
 
 class hr_planilla(models.Model):
     _name = 'hr_mx.planilla'

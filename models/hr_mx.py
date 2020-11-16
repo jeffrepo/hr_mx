@@ -2,15 +2,15 @@
 
 from odoo import api, fields, models, _
 
-class HrMxHistorialPuestoTrabajo(models.Model):
-    _name = 'hr_mx.historial_puesto_trabajo'
-    _rec_name = "puesto_id"
-
-    puesto_id = fields.Many2one('hr.job','Puesto de trabajo')
-    fecha_inicio = fields.Date('Fecha inicio')
-    fecha_fin = fields.Date('Fecha Fin')
-    empleado_id = fields.Many2one('hr.employee','Empleado')
-
+# class HrMxHistorialPuestoTrabajo(models.Model):
+#     _name = 'hr_mx.historial_puesto_trabajo'
+#     _rec_name = "puesto_id"
+#
+#     puesto_id = fields.Many2one('hr.job','Puesto de trabajo')
+#     fecha_inicio = fields.Date('Fecha inicio')
+#     fecha_fin = fields.Date('Fecha Fin')
+#     empleado_id = fields.Many2one('hr.employee','Empleado')
+#
 class HrMxHistorialPuestoTrabajo(models.Model):
     _name = 'hr_mx.historial_salario'
     _description = "Historial de salario"
@@ -25,7 +25,9 @@ class HrMxHistorialRotacionTienda(models.Model):
     _name = "hr_mx.historial_rotacion_tienda"
     _description = "Historial rotacion en tiendas"
 
-    tienda_id = fields.Many2one('pos.config','Tienda')
+    # tienda_id = fields.Many2one('pos.config','Tienda')
+    departamento_id = fields.Many2one('hr.department','Departamento')
+    puesto_id = fields.Many2one('hr.job','Puesto de trabajo')
     fecha_inicio = fields.Date('Fecha inicio')
     fecha_fin = fields.Date('Fecha Fin')
     empleado_id = fields.Many2one('hr.employee','Empleado')
@@ -40,7 +42,7 @@ class ActaAdministrativa(models.Model):
     empleado_id = fields.Many2one('hr.employee','Emnpleado',tracking=True)
     descripcion = fields.Text('Descripción',tracking=True)
     fecha = fields.Date('Fecha',tracking=True)
-
+    tipo_id = fields.Many2one('hr_mx.acta_tipo','Tipo',tracking=True)
 
     @api.model
     def create(self, vals):
@@ -54,3 +56,8 @@ class ActaAdministrativa(models.Model):
 
         result = super(ActaAdministrativa, self).create(vals)
         return result
+
+class ActaAdministrativaTipo(models.Model):
+    _name = "hr_mx.acta_tipo"
+
+    name = fields.Char('Nombre')

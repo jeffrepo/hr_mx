@@ -11,16 +11,17 @@
                             <page name="extras" string="Extras">
                                 <group>
                                     <group>
-                                        <field name="historial_puesto_ids">
+                                        <!-- <field name="historial_puesto_ids">
                                             <tree string="Historial" editable="bottom">
                                                 <field name="puesto_id"/>
                                                 <field name="fecha_inicio"/>
                                                 <field name="fecha_fin"/>
                                             </tree>
-                                        </field>
+                                        </field> -->
                                         <field name="historial_rotacion_tienda_ids">
                                             <tree string="Historial tiendas" editable="bottom">
-                                                <field name="tienda_id"/>
+                                                <field name="departamento_id" string="Area de trabajo"/>
+                                                <field name="puesto_id"/>
                                                 <field name="fecha_inicio"/>
                                                 <field name="fecha_fin"/>
                                             </tree>
