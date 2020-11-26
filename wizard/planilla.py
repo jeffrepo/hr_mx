@@ -120,7 +120,8 @@ class planilla_wizard(models.TransientModel):
                     for linea_ingreso in w.formato_planilla_id.ingreso_ids:
                         columna_total = self.buscar_regla(linea_ingreso.regla_ids,slip.line_ids)
                         hoja.write(fila,columna_datos,columna_total)
-                        total_sueldo += columna_total
+                        if linea_ingreso.sumar_total:
+                            total_sueldo += columna_total
                         totales[linea_ingreso.nombre] += columna_total
                         columna_datos += 1
 

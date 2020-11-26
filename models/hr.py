@@ -8,6 +8,10 @@ class Employee(models.Model):
     area_id = fields.Many2one('hr.area',string='Area')
     # historial_puesto_ids = fields.One2many('hr_mx.historial_puesto_trabajo','empleado_id',string='Historial de puestos')
     historial_rotacion_tienda_ids = fields.One2many('hr_mx.historial_rotacion_tienda','empleado_id',string='Carrera Quemeniana',tracking=True)
+    jornada = fields.Selection([
+        ('diurno', 'Diurno'),
+        ('nocturno', 'Nocturno'),
+        ('mixto', 'Mixto')],'Jornada')
 
 class hr_planilla(models.Model):
     _name = 'hr_mx.planilla'
@@ -26,6 +30,7 @@ class hr_planilla_ingreso(models.Model):
     planilla_id = fields.Many2one('hr_mx.planilla','Planilla')
     nombre = fields.Char('Nombre')
     regla_ids = fields.Many2many('hr.salary.rule','hr_mx_ingreso_regla_rel',string='Reglas')
+    sumar_total = fields.Boolean('Sumar en total')
 
 class hr_planilla_deduccion(models.Model):
     _name = 'hr_mx.planilla_deduccion'

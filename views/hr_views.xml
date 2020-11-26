@@ -7,6 +7,9 @@
                     <field name="model">hr.employee</field>
                     <field name="inherit_id" ref="hr.view_employee_form"/>
                     <field name="arch" type="xml">
+                        <field name="parent_id" position="after">
+                            <field name="jornada"/>
+                        </field>
                         <page name="hr_settings" position="after">
                             <page name="extras" string="Extras">
                                 <group>
@@ -52,6 +55,7 @@
                                     <tree string="Ingresos" editable="bottom">
                                         <field name="nombre"/>
                                         <field name="regla_ids" widget="many2many_tags"/>
+                                        <field name="sumar_total"/>
                                     </tree>
                                 </field>
                             </page>
