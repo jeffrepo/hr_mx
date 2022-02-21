@@ -98,13 +98,13 @@
             </field>
         </record>
 
-        <menuitem
+        <!-- <menuitem
             id="hr_menu_planilla"
             name="Planillas"
             action="action_hr_mx_planilla"
             parent="hr_payroll.menu_hr_work_entry_confirguration"
             sequence="25"
-            groups="hr.group_hr_manager"/>
+            groups="hr.group_hr_manager"/> -->
 
 
     </data>
