@@ -16,6 +16,7 @@ from odoo.fields import Date, Datetime
 
 class planilla_wizard(models.TransientModel):
     _name = 'hr_mx.planilla.wizard'
+    _description = "Wizard planilla"
 
     nomina_ids = fields.Many2many('hr.payslip.run', string='Planillas', required=True)
     formato_planilla_id = fields.Many2one('hr_mx.planilla','Formato planilla', required=True)

@@ -15,6 +15,7 @@ class Employee(models.Model):
 
 class hr_planilla(models.Model):
     _name = 'hr_mx.planilla'
+    _description = "Planilla MX"
     _rec_name = 'nombre'
 
     nombre = fields.Char('Nombre planilla')
@@ -25,6 +26,7 @@ class hr_planilla(models.Model):
 
 class hr_planilla_ingreso(models.Model):
     _name = 'hr_mx.planilla_ingreso'
+    _description = "Ingreso planilla mx"
     _rec_name = 'nombre'
 
     planilla_id = fields.Many2one('hr_mx.planilla','Planilla')
@@ -34,6 +36,7 @@ class hr_planilla_ingreso(models.Model):
 
 class hr_planilla_deduccion(models.Model):
     _name = 'hr_mx.planilla_deduccion'
+    _description = "Planilla deduccion MX"
     _rec_name = 'nombre'
 
     planilla_id = fields.Many2one('hr_mx.planilla','Planilla')
@@ -42,5 +45,6 @@ class hr_planilla_deduccion(models.Model):
 
 class Area(models.Model):
     _name = 'hr.area'
+    _description = "HR Area"
 
     name = fields.Char('Nombre')

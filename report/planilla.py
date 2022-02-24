@@ -12,6 +12,7 @@ import logging
 
 class ReportPlanilla(models.AbstractModel):
     _name = 'report.hr_mx.planilla'
+    _description = "Reporte planilla"
 
     def mes_letras(self,fecha):
         mes_nomina = int(datetime.datetime.strptime(str(fecha), '%Y-%m-%d').date().strftime('%m'))

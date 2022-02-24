@@ -59,5 +59,6 @@ class ActaAdministrativa(models.Model):
 
 class ActaAdministrativaTipo(models.Model):
     _name = "hr_mx.acta_tipo"
+    _description = "Tipo de acta"
 
     name = fields.Char('Nombre')
