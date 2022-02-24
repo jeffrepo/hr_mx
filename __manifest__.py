@@ -8,7 +8,7 @@
         Recursos humanos para MX
     """,
 
-    'author': "JS",
+    'author': "JSS",
     'website': "",
 
     'category': 'Uncategorized',
